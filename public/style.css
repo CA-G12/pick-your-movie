@@ -1,0 +1,162 @@
+/* Start preset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+
+:root {
+  --main-color: #FFE3E3;
+  --secondary: #EAB8C5;
+  --third: #7583C9;
+  --fourth:#A2A3CE;
+  --fifth: #F5DE30;
+}
+
+body {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5rem ;
+  background-color: var(--third);
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: 0 5px 5px 0 #fff;
+  margin-bottom: 4rem;
+}
+
+.search-box { 
+  width: 70%;
+  height: 18vh;
+  position: relative;
+}
+
+.search {
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  border: none;
+  background-color:#FFE3E3 ;
+  width: 100%;
+  height: 40%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+::placeholder {
+  color: var(--third);
+}
+
+.search-box .empty-icon {
+  position:absolute;
+  right: 4rem;
+  top: 0.8rem;
+  font-size: x-large;
+  color: var(--third);
+}
+
+.search-icon {
+  right: 1rem;
+  top: .8rem;
+  position: absolute;
+  font-size: x-large;
+  color: var(--third);
+}
+
+
+.cards-container {
+  display: flex;
+  height: 70vh;
+  background-color: #FFE3E3;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 3rem;
+  }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--fourth);
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
+  padding: 10px;
+  border-radius: 12px;
+  width: 20%;
+  gap: 1rem;
+}
+
+.card img {
+  width: 90%;  
+  height: 45vh; 
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;   
+} 
+
+.details .title {
+  color: var(--main-color);
+  font-size: 1.9rem;
+}
+
+.details .rating {
+  color: var(--fifth);
+  font-size: 1.5rem;
+}
+
+.card .genres {
+  font-size: 1.5rem;
+  color:var(--fifth);
+}
