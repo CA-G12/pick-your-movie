@@ -3,6 +3,7 @@ const autocomplete = document.querySelector('.autocomplete');
 
 const manipulateDOM = (data) => {
   autocomplete.innerHTML = '';
+  autocomplete.style.display = 'block';
   data.forEach((title) => {
     const titlePara = document.createElement('p');
     titlePara.classList.add('title');
@@ -27,7 +28,10 @@ const fetch = (method, uri, cb) => {
 
 searchInput.addEventListener('keyup', (event) => {
   const uri = `/autocomplete?data=${encodeURIComponent(event.target.value)}`;
-  if (event.target.value === '') autocomplete.innerHTML = '';
+  if (event.target.value === '') {
+    autocomplete.innerHTML = '';
+    autocomplete.style.display = 'none';
+  }
   if (event.target.value !== '') {
     fetch('GET', uri, manipulateDOM);
   }
