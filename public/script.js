@@ -23,6 +23,7 @@ const emptyInputField = () => {
   autocomplete.style.display = 'none';
   autocomplete.textContent = '';
 };
+
 const concatenate = (arr) => arr.join(', ');
 
 const createMovieCards = (data) => {
@@ -48,15 +49,49 @@ const createMovieCards = (data) => {
 
     const rating = document.createElement('p');
     rating.classList.add('rating');
-    rating.textContent = obj.show.rating.average;
+    rating.textContent = obj.show.rating.average ? obj.show.rating.average : 'Unknown';
     detailsSection.appendChild(rating);
 
     const genres = document.createElement('p');
     genres.classList.add('genres');
-    genres.textContent = concatenate(obj.show.genres);
+    genres.textContent = concatenate(obj.show.genres) || 'Unknown';
     card.appendChild(genres);
   });
 };
+
+const createInitMovieCards = (data) => {
+  cardsCont.textContent = '';
+  data.forEach((obj) => {
+    const card = document.createElement('section');
+    card.classList.add('card');
+    cardsCont.appendChild(card);
+
+    const img = document.createElement('img');
+    img.src = obj.image.medium;
+    img.alt = 'Poster Image';
+    card.appendChild(img);
+
+    const detailsSection = document.createElement('section');
+    detailsSection.classList.add('details');
+    card.appendChild(detailsSection);
+
+    const title = document.createElement('h3');
+    title.classList.add('title');
+    title.textContent = obj.name;
+    detailsSection.appendChild(title);
+
+    const rating = document.createElement('p');
+    rating.classList.add('rating');
+    rating.textContent = obj.rating.average ? obj.rating.average : 'Unknown';
+    detailsSection.appendChild(rating);
+
+    const genres = document.createElement('p');
+    genres.classList.add('genres');
+    genres.textContent = concatenate(obj.genres) || 'Unknown';
+    card.appendChild(genres);
+  });
+};
+
 const getMovies = () => {
   const url = `https://api.tvmaze.com/search/shows?q=${searchInput.value}`;
   fetch('GET', url, createMovieCards);
@@ -73,6 +108,11 @@ const manipulateDOM = (data) => {
   });
 };
 
+const initialFetch = () => {
+  const url = 'https://api.tvmaze.com/shows?page=1';
+  fetch('GET', url, createInitMovieCards);
+};
+
 searchInput.addEventListener('keyup', (event) => {
   const uri = `/autocomplete?data=${encodeURIComponent(event.target.value)}`;
   if (event.target.value === '') {
@@ -83,6 +123,8 @@ searchInput.addEventListener('keyup', (event) => {
     fetch('GET', uri, manipulateDOM);
   }
 });
+
+window.addEventListener('load', initialFetch);
 
 emptyIcon.addEventListener('click', emptyInputField);
 
