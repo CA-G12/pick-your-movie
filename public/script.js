@@ -24,6 +24,39 @@ const emptyInputField = () => {
   autocomplete.textContent = '';
 };
 
+const createMovieCards = (data) => {
+  cardsCont.textContent = '';
+  data.forEach((obj) => {
+    const card = document.createElement('section');
+    card.classList.add('card');
+    cardsCont.appendChild(card);
+
+    const img = document.createElement('img');
+    img.src = obj.show.image.medium;
+    img.alt = 'Poster Image';
+    card.appendChild(img);
+
+    const detailsSection = document.createElement('section');
+    detailsSection.classList.add('details');
+    card.appendChild(detailsSection);
+
+    const title = document.createElement('h3');
+    title.classList.add('title');
+    title.textContent = obj.show.name;
+    detailsSection.appendChild(title);
+
+    const rating = document.createElement('p');
+    rating.classList.add('rating');
+    rating.textContent = obj.show.rating.average;
+    detailsSection.appendChild(rating);
+
+    const genres = document.createElement('p');
+    genres.classList.add('genres');
+    genres.textContent = concatenate(obj.show.genres);
+    card.appendChild(genres);
+  });
+};
+
 const concatenate = (arr) => arr.join(', ');
 
 const manipulateDOM = (data) => {
