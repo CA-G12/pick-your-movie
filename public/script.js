@@ -23,6 +23,7 @@ const emptyInputField = () => {
   autocomplete.style.display = 'none';
   autocomplete.textContent = '';
 };
+const concatenate = (arr) => arr.join(', ');
 
 const createMovieCards = (data) => {
   cardsCont.textContent = '';
@@ -56,13 +57,10 @@ const createMovieCards = (data) => {
     card.appendChild(genres);
   });
 };
-
 const getMovies = () => {
   const url = `https://api.tvmaze.com/search/shows?q=${searchInput.value}`;
   fetch('GET', url, createMovieCards);
 };
-
-const concatenate = (arr) => arr.join(', ');
 
 const manipulateDOM = (data) => {
   autocomplete.innerHTML = '';
@@ -89,4 +87,3 @@ searchInput.addEventListener('keyup', (event) => {
 emptyIcon.addEventListener('click', emptyInputField);
 
 searchIcon.addEventListener('click', getMovies);
-
