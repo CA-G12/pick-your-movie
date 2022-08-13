@@ -5,7 +5,7 @@ A web application to search for movies, with an autocomplete feature.
 
 ## 📍 Live link
 
-You can check the live version out from [HERE](https://ca-g12.github.io/pick-your-movie/).
+You can check the live version out from [HERE](https://pick-your-movie.herokuapp.com/).
 
 ## 📍 User journey
 
@@ -29,8 +29,8 @@ You can check the live version out from [HERE](https://ca-g12.github.io/pick-you
 - You can click the _code_ drop-down menu as illustrated in the picture above and copy the link to clone the repo.
 - Now go to your terminal and type: `git clone <the link here>` and then the repo will be cloned to your local machine.
 - By now you have to open your IDE -I recommend VSCode- and open the project.
-- to open a live page from your local machine project, you can download the `live Server` extension. This's a [link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to the extension.
-- Now right click with your mouse and choose: Open with live server.
+- Now you need to run the command `npm install` to install all the dependencies.
+- to open a live page from your local machine project, you can run the `npm start` command which will open a live hot server to work with.
 - Happy Coding!🤞
 
 ## 📍 Technologies that I used
