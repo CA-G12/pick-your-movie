@@ -1,5 +1,12 @@
 const searchInput = document.getElementById('search');
 const autocomplete = document.querySelector('.autocomplete');
+const emptyIcon = document.querySelector('.empty-icon');
+
+const emptyInputField = () => {
+  searchInput.value = '';
+  autocomplete.style.display = 'none';
+  autocomplete.textContent = '';
+};
 
 const manipulateDOM = (data) => {
   autocomplete.innerHTML = '';
@@ -36,3 +43,5 @@ searchInput.addEventListener('keyup', (event) => {
     fetch('GET', uri, manipulateDOM);
   }
 });
+
+emptyIcon.addEventListener('click', emptyInputField);
