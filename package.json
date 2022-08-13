@@ -1,0 +1,28 @@
+{
+  "name": "pick-your-movie",
+  "version": "1.0.0",
+  "description": "A web application to search for movies, with an autocomplete feature.",
+  "main": "src/sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/pick-your-movie.git"
+  },
+  "author": "asil alghoul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/pick-your-movie/issues"
+  },
+  "homepage": "https://github.com/CA-G12/pick-your-movie#readme",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
+  }
+}
