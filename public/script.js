@@ -57,6 +57,11 @@ const createMovieCards = (data) => {
   });
 };
 
+const getMovies = () => {
+  const url = `https://api.tvmaze.com/search/shows?q=${searchInput.value}`;
+  fetch('GET', url, createMovieCards);
+};
+
 const concatenate = (arr) => arr.join(', ');
 
 const manipulateDOM = (data) => {
@@ -82,4 +87,6 @@ searchInput.addEventListener('keyup', (event) => {
 });
 
 emptyIcon.addEventListener('click', emptyInputField);
+
+searchIcon.addEventListener('click', getMovies);
 
