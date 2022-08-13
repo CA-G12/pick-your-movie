@@ -73,9 +73,16 @@ header {
   position: relative;
 }
 
+header img {
+  width: 10rem;
+}
+
 .search-box { 
   width: 70%;
   height: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -107,7 +114,7 @@ header .autocomplete {
   padding: 1rem;
   position: absolute;
   right: 5.25%;
-  top: 45%;
+  top: 63%;
   z-index: 10;
   background-color: var(--main-color);
   overflow-y: auto;
@@ -133,15 +140,15 @@ header .autocomplete .title:focus {
 .search-box .empty-icon {
   position:absolute;
   right: 4rem;
-  top: 0.8rem;
+  top: 3.5rem;
   font-size: x-large;
   color: var(--third);
   cursor: pointer;
 }
 
-.search-icon {
+.search-box  .search-icon {
   right: 1rem;
-  top: .8rem;
+  top: 3.5rem;
   position: absolute;
   font-size: x-large;
   color: var(--third);
@@ -150,11 +157,13 @@ header .autocomplete .title:focus {
 
 
 .cards-container {
+  width: 100%;
   display: flex;
   height: 70vh;
   background-color: #FFE3E3;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   position: relative;
   gap: 3rem;
   }
@@ -169,13 +178,14 @@ header .autocomplete .title:focus {
   box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
   padding: 10px;
   border-radius: 12px;
-  width: 20%;
+  width: 22%;
+  height: 60vh;
   gap: 1rem;
 }
 
 .card img {
-  width: 90%;  
-  height: 45vh; 
+  width: 70%;  
+  height: 38vh; 
 }
 
 .details {
@@ -187,12 +197,12 @@ header .autocomplete .title:focus {
 
 .details .title {
   color: var(--main-color);
-  font-size: 1.9rem;
+  font-size: 1.2rem;
 }
 
 .details .rating {
   color: var(--fifth);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .card .genres {
