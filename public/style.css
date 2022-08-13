@@ -70,6 +70,7 @@ header {
   border-bottom-left-radius: 2rem;
   box-shadow: 0 5px 5px 0 #fff;
   margin-bottom: 4rem;
+  position: relative;
 }
 
 .search-box { 
@@ -81,16 +82,52 @@ header {
 .search {
   padding: 0 2rem;
   font-size: 1.6rem;
-  border-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
   border: none;
   background-color:#FFE3E3 ;
   width: 100%;
   height: 40%;
   font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 2px 3px 0 #fff;
+}
+
+.search:focus   {
+  outline: 3px solid var(--fifth);
+  border: none ;
 }
 
 ::placeholder {
   color: var(--third);
+}
+
+header .autocomplete {
+  width: 62.65%;
+  height: 40vh;
+  padding: 1rem;
+  position: absolute;
+  right: 5.25%;
+  top: 45%;
+  z-index: 10;
+  background-color: var(--main-color);
+  overflow-y: auto;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: 0 2px 3px 0 #fff;
+  display: none;
+}
+
+header .autocomplete .title {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: large;
+  color: var(--third);
+  cursor: pointer;
+}
+
+header .autocomplete .title:hover,
+header .autocomplete .title:focus {
+  outline: 1px solid var(--third);
 }
 
 .search-box .empty-icon {
@@ -99,6 +136,7 @@ header {
   top: 0.8rem;
   font-size: x-large;
   color: var(--third);
+  cursor: pointer;
 }
 
 .search-icon {
@@ -107,6 +145,7 @@ header {
   position: absolute;
   font-size: x-large;
   color: var(--third);
+  cursor: pointer;
 }
 
 
