@@ -1,23 +1,8 @@
 const searchInput = document.getElementById('search');
 const autocomplete = document.querySelector('.autocomplete');
 const emptyIcon = document.querySelector('.empty-icon');
-
-const emptyInputField = () => {
-  searchInput.value = '';
-  autocomplete.style.display = 'none';
-  autocomplete.textContent = '';
-};
-
-const manipulateDOM = (data) => {
-  autocomplete.innerHTML = '';
-  autocomplete.style.display = 'block';
-  data.forEach((title) => {
-    const titlePara = document.createElement('p');
-    titlePara.classList.add('title');
-    titlePara.textContent = title;
-    autocomplete.appendChild(titlePara);
-  });
-};
+const searchIcon = document.querySelector('.search-icon');
+const cardsCont = document.querySelector('.cards-container');
 
 const fetch = (method, uri, cb) => {
   const xhr = new XMLHttpRequest();
@@ -33,6 +18,25 @@ const fetch = (method, uri, cb) => {
   xhr.send();
 };
 
+const emptyInputField = () => {
+  searchInput.value = '';
+  autocomplete.style.display = 'none';
+  autocomplete.textContent = '';
+};
+
+const concatenate = (arr) => arr.join(', ');
+
+const manipulateDOM = (data) => {
+  autocomplete.innerHTML = '';
+  autocomplete.style.display = 'block';
+  data.forEach((title) => {
+    const titlePara = document.createElement('p');
+    titlePara.classList.add('title');
+    titlePara.textContent = title;
+    autocomplete.appendChild(titlePara);
+  });
+};
+
 searchInput.addEventListener('keyup', (event) => {
   const uri = `/autocomplete?data=${encodeURIComponent(event.target.value)}`;
   if (event.target.value === '') {
@@ -45,3 +49,4 @@ searchInput.addEventListener('keyup', (event) => {
 });
 
 emptyIcon.addEventListener('click', emptyInputField);
+
